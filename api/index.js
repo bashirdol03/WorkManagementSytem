@@ -67,7 +67,7 @@ app.use(session({
     // DONT SET ANY COOKIE OPTIONS HERE, STOPS SESSION DATA PERSISTING
     cookie : {secure : false, // SET TO FALSE TO RUN TESTS (HTTP SESSION COOKIE PERSISTENCE)
               // COMMENT OUT SAMESITE,DOMAIN AND PATH FOR TESTS 
-              // sameSite : 'none',
+               sameSite : 'none',
               // domain: '.localhost', // ALL LOCAL HOST SUBDOMAINS
               //path: '/api', // CAN USE IT FOR DIFFERENT VVERSIONS OF APP
               // COULD HAVE TWO APP.JS LIKE FILES WITH SLIGHT DIFFERENCES IN ROUTES
