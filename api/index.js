@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 8078;
 app.use(express.json());
 
 app.use(cors({
-  origin: "http://localhost:3000", // your frontend URL
+  origin: "https://localhost:3000", // your frontend URL
   credentials: true, // this allows cookies to be sent
 }));
 
@@ -65,9 +65,9 @@ app.use(session({
     saveUninitialized : false,
     store : sessionStore,
     // DONT SET ANY COOKIE OPTIONS HERE, STOPS SESSION DATA PERSISTING
-    cookie : {secure : false, // SET TO FALSE TO RUN TESTS (HTTP SESSION COOKIE PERSISTENCE)
+    cookie : {secure : true, // SET TO FALSE TO RUN TESTS (HTTP SESSION COOKIE PERSISTENCE)
               // COMMENT OUT SAMESITE,DOMAIN AND PATH FOR TESTS 
-               sameSite : 'lax',
+               sameSite : 'none',
               // domain: '.localhost', // ALL LOCAL HOST SUBDOMAINS
               //path: '/api', // CAN USE IT FOR DIFFERENT VVERSIONS OF APP
               // COULD HAVE TWO APP.JS LIKE FILES WITH SLIGHT DIFFERENCES IN ROUTES
