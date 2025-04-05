@@ -74,7 +74,6 @@ app.use(session({
     cookie : {secure :  isProduction , // SET TO FALSE TO RUN TESTS (HTTP SESSION COOKIE PERSISTENCE)
               // COMMENT OUT SAMESITE,DOMAIN AND PATH FOR TESTS 
               sameSite : isProduction ? "none" : "lax",
-              ...(isProduction && { domain: ".onrender.com" }),
               // domain: '.localhost', // ALL LOCAL HOST SUBDOMAINS
               //path: '/api', // CAN USE IT FOR DIFFERENT VVERSIONS OF APP
               // COULD HAVE TWO APP.JS LIKE FILES WITH SLIGHT DIFFERENCES IN ROUTES
