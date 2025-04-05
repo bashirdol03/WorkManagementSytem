@@ -19,6 +19,10 @@ dotenv.config()
 
 const app = express()
 
+
+app.set("trust proxy", true);
+
+
 const PORT = process.env.PORT || 8078;
 
 // Middleware to parse JSON
@@ -27,7 +31,6 @@ app.use(express.json());
 const isProduction = process.env.NODE_ENV === "production";
 const frontendUri = process.env.FRONTEND_URL;
 
-app.set("trust proxy", true);
 
 app.use(cors({
   origin: isProduction
