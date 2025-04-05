@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 
 
 dotenv.config();
-const uri =  "mongodb://localhost:27017/testapp?ssl=false&directConnection=true";
+const uri = process.env.MONGO_DB 
 
 
 
