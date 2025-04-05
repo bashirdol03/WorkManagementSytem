@@ -181,7 +181,7 @@ export const logout = async (req, res) => {
   
   export const getLoggedInUser = async (req, res, next) => {
     try {
-          
+          console.log(req.userId)
           try {
             const user = await User.findById(req.userId);
             const { password, ...info } = user._doc;

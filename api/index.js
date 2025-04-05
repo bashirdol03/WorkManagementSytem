@@ -24,7 +24,10 @@ const PORT = process.env.PORT || 8078;
 // Middleware to parse JSON
 app.use(express.json());
 
-app.use(cors())
+app.use(cors({
+  origin: "http://localhost:3000", // your frontend URL
+  credentials: true, // this allows cookies to be sent
+}));
 
 // SESSION SETUP AND PERSISTING SESSION DATA IN MONGO-DB
 
