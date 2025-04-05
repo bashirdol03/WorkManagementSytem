@@ -25,11 +25,11 @@ const PORT = process.env.PORT || 8078;
 app.use(express.json());
 
 const isProduction = process.env.NODE_ENV === "production";
-const allowedOrigin = process.env.FRONTEND_URL || "http://localhost:3000";
+const frontendUri = process.env.FRONTEND_URL;
 
 app.use(cors({
   origin: isProduction
-    ? process.env.FRONTEND_URL
+    ? frontendUri 
     : "http://localhost:3000",
   credentials: true
 }));
