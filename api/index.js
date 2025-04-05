@@ -24,10 +24,16 @@ const PORT = process.env.PORT || 8078;
 // Middleware to parse JSON
 app.use(express.json());
 
+const isProduction = process.env.NODE_ENV === "production";
+const allowedOrigin = process.env.FRONTEND_URL || "http://localhost:3000";
+
 app.use(cors({
-  origin: "https://localhost:3000", // your frontend URL
-  credentials: true, // this allows cookies to be sent
+  origin: isProduction
+    ? process.env.FRONTEND_URL
+    : "http://localhost:3000",
+  credentials: true
 }));
+
 
 // SESSION SETUP AND PERSISTING SESSION DATA IN MONGO-DB
 
@@ -65,9 +71,9 @@ app.use(session({
     saveUninitialized : false,
     store : sessionStore,
     // DONT SET ANY COOKIE OPTIONS HERE, STOPS SESSION DATA PERSISTING
-    cookie : {secure : false, // SET TO FALSE TO RUN TESTS (HTTP SESSION COOKIE PERSISTENCE)
+    cookie : {secure :  isProduction , // SET TO FALSE TO RUN TESTS (HTTP SESSION COOKIE PERSISTENCE)
               // COMMENT OUT SAMESITE,DOMAIN AND PATH FOR TESTS 
-               sameSite : 'lax',
+              isProduction ? "none" : "lax",
               // domain: '.localhost', // ALL LOCAL HOST SUBDOMAINS
               //path: '/api', // CAN USE IT FOR DIFFERENT VVERSIONS OF APP
               // COULD HAVE TWO APP.JS LIKE FILES WITH SLIGHT DIFFERENCES IN ROUTES
