@@ -17,6 +17,10 @@ function ProtectedPage({ children }) {
       return response.data;
     },
     {
+      retry: false,
+      refetchOnWindowFocus: true,
+      refetchInterval: false,
+      staleTime: 0, // force refetch every time the component mounts
       onSuccess: (data) => setUser(data),
       onError: () => {
         setUser(null);
@@ -24,6 +28,7 @@ function ProtectedPage({ children }) {
       },
     }
   );
+  
 
   console.log(user)
 
