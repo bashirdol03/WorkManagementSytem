@@ -18,7 +18,7 @@ Password: password
 Email: demouser2@myapp.com
 Password: password
 
-🕒 **Note**: The app may take a few seconds to load on first visit since it's hosted on Render's free tier, which puts the server to sleep when idle.
+🕒 **Note**: The app may take a few seconds to load on first visit since the backend is hosted on Render's free tier, which puts the server to sleep when idle.
 
 ## ⚙️ Tech Stack
 
