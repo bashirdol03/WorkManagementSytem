@@ -101,6 +101,6 @@ cd client && npm install
 cd ../server && npm install
 
 # Start the servers
-npm run dev
+npm start
 
 
