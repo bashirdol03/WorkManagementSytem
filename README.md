@@ -3,7 +3,7 @@
 This is a full-stack **Work Management System** built with the **MERN stack** (MongoDB, Express, React, Node.js). It’s designed to help teams organize their projects, assign tasks, and collaborate more effectively. 
 The app features **role-based access control**, secure **session-based authentication**, **Google login**, and project-specific permission logic, all aimed at keeping things safe and efficient.
 
-👉 **Live Demo**: [https://app.mybackendserver.pro/login](https://app.mybackendserver.pro/login)
+👉 **Live Demo**: [https://app.mybackendserver.pro(https://app.mybackendserver.pro)
 
 ---
 
